@@ -1,0 +1,10 @@
+body{
+    max-width: 600px;
+    margin: auto;
+    font-family: sans-serif;
+    color: chocolate;
+}
+
+article + article{
+    margin-top: 3rem;
+}
