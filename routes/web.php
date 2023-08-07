@@ -1,5 +1,6 @@
 <?php
 use App\Models\Card;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
 
@@ -17,35 +18,18 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 |
 */
 
-Route::get('/', function () {
-
-    $files = File::files(resource_path("/Cards/"));
-
-
-//  $Cards = collect( File::files(resource_path("/Cards/")))
-//     ->map(function ($file){
-//         return YamlFrontMatter::parseFile($file);
-//     })
-//     ->map(function ($file){
-//         return new Card(
-//             $document->title,
-//             $document->excerpt,
-//             $document->date,
-//             $document->slug,
-//             $document->body()
-//         );
-//     })
-    return view('Cards',[
-        'card' => Card::all()
+Route::get('/', function () { 
+    return view('posts',[
+        'posts' => Post::all()
     ]);
 }); 
 
 
-Route::get('/Cards/{card}', function ($slug) {   
+Route::get('/posts/{post}', function ($id) {   
     //Card is class(model) contain find function
     
-    return view('card', [
-        'card' => Card::find($slug)
+    return view('posts', [
+        'posts' => Post::find($id)
     ]);
     
 });
