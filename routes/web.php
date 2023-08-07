@@ -1,6 +1,11 @@
 <?php
 use App\Models\Card;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\File;
+
+use Spatie\YamlFrontMatter\YamlFrontMatter;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +18,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Cards');
-});
+
+    $files = File::files(resource_path("/Cards/"));
+
+
+//  $Cards = collect( File::files(resource_path("/Cards/")))
+//     ->map(function ($file){
+//         return YamlFrontMatter::parseFile($file);
+//     })
+//     ->map(function ($file){
+//         return new Card(
+//             $document->title,
+//             $document->excerpt,
+//             $document->date,
+//             $document->slug,
+//             $document->body()
+//         );
+//     })
+    return view('Cards',[
+        'card' => Card::all()
+    ]);
+}); 
 
 
 Route::get('/Cards/{card}', function ($slug) {   
