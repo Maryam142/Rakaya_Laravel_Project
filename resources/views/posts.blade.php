@@ -4,6 +4,7 @@
     @foreach($posts as $post)
         <article>
             <h1>
+                {{dd($post)}}
                 <a href="/posts/{{ $post->id }}">
                     {{$post->title}}
                 </a>
