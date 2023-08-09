@@ -25,11 +25,11 @@ Route::get('/', function () {
 }); 
 
 
-Route::get('/posts/{post}', function ($id) {   
+Route::get('/posts/{post:slug}', function (Post $post) {   
     //Card is class(model) contain find function
     
     return view('post', [
-        'post' => Post::find($id)
+        'post' => $post
     ]);
     
 });
