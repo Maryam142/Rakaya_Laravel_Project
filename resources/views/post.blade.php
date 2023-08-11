@@ -10,7 +10,9 @@
         </p>
 
         <div>
+            <p>
             {!! $post->body !!}
+            </p>
         </div>
 
         <a href="/">Go Back</a>
