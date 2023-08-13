@@ -15,15 +15,23 @@
         <!--  Category -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
             <x-dropdown>
-            <a href="/" class="block px-3 text-sm leading-6 hover:bg-gray-300 foucs:bg-gray-300">
-            الكل
-            </a>
-            @foreach ($categories as $category) 
-            <a href="/categories/{{$category->slug}}" 
-            class="block px-3 text-sm leading-6 hover:bg-gray-300 foucs:bg-gray-300">
-            {{$category->name}}
-            </a>
-            @endforeach
+
+                <x-slot name="trigger">
+                    <button class="py-2 pl-3 pr-9d text-sm inline-flex font-semibold text-right flex lg:inline-flex w-32 text-center">
+                        {{isset($currentCategory)? ucwords($currentCategory->name) : 'الاقسام'}}
+                    </button>
+                    <x-down-arrow class="" absolute pointer-events-none></x-down-arrow>
+
+                </x-slot>
+
+                <x-dropdown-item href="/"> الكل</x-dropdown-item>
+                @foreach ($categories as $category)
+                <x-dropdown-item href="/categories/{{$category->slug}}">
+                    {{ ucwords($category->name) }}
+                </x-dropdown-item>
+                @endforeach
+
+
             </x-dropdown>
         </div>
 
@@ -50,12 +58,7 @@
         <!-- Search -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
             <form method="GET" action="#">
-                <input 
-                 type="text" 
-                 name="search" 
-                 placeholder="ابحث هنا" 
-                 class="bg-transparent placeholder-black font-semibold text-sm text-right"
-                 value="{{request('search')}}">
+                <input type="text" name="search" placeholder="ابحث هنا" class="bg-transparent placeholder-black font-semibold text-sm text-right" value="{{request('search')}}">
             </form>
         </div>
     </div>

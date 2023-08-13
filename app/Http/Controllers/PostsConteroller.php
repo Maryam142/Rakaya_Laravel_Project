@@ -12,8 +12,8 @@ class PostsConteroller extends Controller
 {
     public function index(){
     return view('posts', [
-        'posts' =>Post::latest()->filter(request(['search']))->paginate(6),
-        'categories' => Category::all()
+        'categories' => Category::all(),
+        'posts' =>Post::latest()->filter(request(['search']))->paginate(6)
     ]);
    }
 
