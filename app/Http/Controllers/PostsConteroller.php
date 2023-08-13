@@ -11,15 +11,15 @@ use Illuminate\Http\Request;
 class PostsConteroller extends Controller
 {
     public function index(){
-    return view('posts', [
-        'categories' => Category::all(),
-        'posts' =>Post::latest()->filter(request(['search']))->paginate(6)
+    return view('posts.index', [
+        'posts' =>Post::latest()->filter(request(['search', 'category']))->paginate(6),
+        'currentCategory' => Category::firstWhere('slug',request('category'))
     ]);
    }
 
 
    public function showposts(Post  $post  ){
-    return view('post', [
+    return view('posts.showposts', [
         'post' => $post
     ]);
    }
