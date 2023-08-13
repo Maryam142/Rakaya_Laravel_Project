@@ -39,7 +39,7 @@
                 </div>
                 <div class="flex items-center text-sm">
                     <div class="ml-3">
-                        <h5 class="font-bold">:هذا العمل تم بالتعاون مع</h5>
+                        <h5 class="font-bold">:تم هذا العمل بالتعاون مع</h5>
                         <h6>{!! $post-> author->name !!}</h6>
                     </div>
                     <!-- <img src="/images/lary-avatar.svg" alt="Lary avatar"> -->

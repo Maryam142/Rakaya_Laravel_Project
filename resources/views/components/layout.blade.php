@@ -49,7 +49,7 @@
                             <input id="email" type="text" placeholder="بريدك الالكتروني" class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none">
                         </div>
 
-                        <button type="submit" class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
+                        <button type="submit" class="transition-colors duration-300 bg-pink-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
                             اشتراك
                         </button>
                     </form>

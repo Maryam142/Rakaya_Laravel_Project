@@ -28,7 +28,7 @@
         </div>
 
         <!-- Other Filters -->
-        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
+        <!-- <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
             <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-9 text-sm font-semibold text-right">
                 <option value="category" disabled selected>تصنيفات أخرى
                 </option>
@@ -45,12 +45,17 @@
                         <path fill="#222" d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
                     </g>
                 </svg> 
-        </div>
+        </div> -->
 
         <!-- Search -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
             <form method="GET" action="#">
-                <input type="text" name="search" placeholder="ابحث هنا" class="bg-transparent placeholder-black font-semibold text-sm text-right">
+                <input 
+                 type="text" 
+                 name="search" 
+                 placeholder="ابحث هنا" 
+                 class="bg-transparent placeholder-black font-semibold text-sm text-right"
+                 value="{{request('search')}}">
             </form>
         </div>
     </div>

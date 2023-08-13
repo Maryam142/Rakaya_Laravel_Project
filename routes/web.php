@@ -22,13 +22,16 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 */
 
 Route::get('/', function () {
-    \Illuminate\Support\Facades\DB::listen(function ($query) {
-        logger($query->sql);
-    });
+    $posts=Post::latest();
 
+    if(request('search')){
+        $posts 
+        ->where ('title', 'like', '%'.request('search').'%')
+        ->orWhere ('body', 'like', '%'.request('search').'%');
+    }
 
     return view('posts', [
-        'posts' => Post::latest()->get(),
+        'posts' => $posts->get(),
         'categories' => Category::all()
     ]);
 });
@@ -36,7 +39,7 @@ Route::get('/', function () {
 
 Route::get('/posts/{post:slug}', function (Post $post) {
     //Card is class(model) contain find function
-
+ 
     return view('post', [
         'post' => $post
     ]);
