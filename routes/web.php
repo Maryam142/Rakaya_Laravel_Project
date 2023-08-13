@@ -22,7 +22,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 |
 */
 
-Route::get('/',[PostsConteroller::class, 'index'])  ->name('home');
+Route::get('/',[PostsConteroller::class, 'index'])->name('home');
 
 Route::get('/posts/{post:slug}', [PostsConteroller::class, 'showposts']);
 
