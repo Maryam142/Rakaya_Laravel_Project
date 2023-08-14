@@ -1,3 +1,6 @@
 # Rakaya Laravel Project
                         ================================================================================
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+                        <h1>Simulation of a digital products store </h1>
+<img width="960" alt="image" src="https://github.com/Maryam142/Rakaya_Laravel_Project/assets/108498078/150f3049-d762-4f5e-8d4f-0fd56636450a">
+
+
