@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\PostsConteroller;
 use App\Http\Controllers\RegisterConteroller;
+use App\Http\Controllers\SessionConteroller;
+
 
 use App\Models\Post;
 use App\Models\User;
@@ -28,6 +30,8 @@ Route::get('/',[PostsConteroller::class, 'index'])->name('home');
 
 Route::get('/posts/{post:slug}', [PostsConteroller::class, 'showposts']);
 
-Route::get('register', [RegisterConteroller::class, 'create']);
-Route::post('register', [RegisterConteroller::class, 'store']);
+Route::get('register', [RegisterConteroller::class, 'create'])-> middleware('guest');
+Route::post('register', [RegisterConteroller::class, 'store'])-> middleware('guest'); 
+
+Route::post('logout', [SessionConteroller::class, 'destroy']); 
 

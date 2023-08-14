@@ -21,16 +21,30 @@
                 </a>
             </div>
 
-            <div class="mt-8 md:mt-0">
-                <a href="/" class="text-xs font-bold uppercase">الصفحة الرئيسية</a>
+            <div class="mt-8 md:mt-0 flex items-center">
 
-                <a href="#" class="bg-pink-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                @auth
+                <span class="text-xs font-bold uppercase"> {{ auth()->user()->name }} أهلًا </span>
+
+                <form method="POST" action="/logout" class="text-xs font-semibold text-blue-400 ml-5">
+                    @csrf
+                    <button type="submit">تسجيل الخروج</button>
+                </form>
+                @endauth
+
+                @guest
+                <a href="/register" class="text-xs font-bold uppercase"> تسجيل جديد </a>
+                <a href="/login" class="ml-5 text-xs font-bold uppercase"> تسجيل الدخول </a>
+
+                @endguest
+
+                <a href="#" class="bg-pink-300 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
                     iاشترك للحصول على التحديثات
                 </a>
             </div>
         </nav>
-        {{$slot}}
 
+        {{$slot}}
 
         <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16  text-center">
             <img src="/images/logo.png" alt="" class="mx-auto -mb-6" style="width: 145px;">

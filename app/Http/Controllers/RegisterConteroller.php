@@ -20,9 +20,10 @@ class RegisterConteroller extends Controller{
         'password' => 'required|min:7|max:255',
       ]);
       
-    //   $attibutes['password'] = bcrypt($attibutes['password']);
 
-      User::create($attibutes);
-      return redirect('/');->with('success', '!تم انشاء الحساب بنجاح');
+
+      $user=User::create($attibutes);
+      auth()->login($user); 
+      return redirect('/')->with('success', '!تم انشاء الحساب بنجاح');
     }
 }
