@@ -26,9 +26,3 @@ Route::get('/',[PostsConteroller::class, 'index'])->name('home');
 
 Route::get('/posts/{post:slug}', [PostsConteroller::class, 'showposts']);
 
-
-Route::get('authors/{author:username}', function (User $author) {
-    return view('posts', [
-        'posts' => $author->posts,
-    ]);
-});

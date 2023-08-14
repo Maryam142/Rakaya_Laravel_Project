@@ -1,8 +1,6 @@
-
 @props(['post'])
 
-<article 
- {{ $attributes->merge(['class' => 'transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
+<article {{ $attributes->merge(['class' => 'transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
     <div class="py-6 px-5">
         <div>
             <img src="/images/illustration-4.png" alt="Blog Post illustration" class="rounded-xl">
@@ -11,7 +9,7 @@
         <div class="mt-8 flex flex-col justify-between">
             <header>
                 <div class="space-x-2">
-                <x-category-button :category="$post->category"/>
+                    <x-category-button :category="$post->category" />
                 </div>
 
                 <div class="mt-4">
@@ -40,7 +38,11 @@
                 <div class="flex items-center text-sm">
                     <div class="ml-3">
                         <h5 class="font-bold">:تم هذا العمل بالتعاون مع</h5>
-                        <h6>{!! $post-> author->name !!}</h6>
+                        <h6>
+                            <a href="/?author={{ $post->author->username }}">
+                                {{ $post->author->name }}
+                            </a>
+                        </h6>
                     </div>
                     <!-- <img src="/images/lary-avatar.svg" alt="Lary avatar"> -->
                     <svg viewBox="0 0 1024 1024" class="icon h-7" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">

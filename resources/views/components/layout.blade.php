@@ -33,7 +33,7 @@
 
 
         <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16  text-center">
-            <img src="./images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
+            <img src="/images/logo.png" alt="" class="mx-auto -mb-6" style="width: 145px;">
             <h5 class="text-3xl">ابق على اطلاع على أحدث التصاميم</h5>
             <p class="text-sm mt-3">نعدك بتصاميم تاخذك لعالم آخر</p>
 
