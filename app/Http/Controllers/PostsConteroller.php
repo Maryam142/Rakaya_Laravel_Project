@@ -13,9 +13,10 @@ class PostsConteroller extends Controller
     public function index(){
    
    return view('posts.index', [
+    'currentCategory' => Category::firstWhere('slug',request('category')),
     'posts' => Post::latest()->filter(
       request(['search', 'category', 'author'])
-    )->paginate(6)
+    )->paginate(6)->withQueryString()
    ]);
    
     // return view('posts.index', [
