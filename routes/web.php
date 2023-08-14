@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PostsConteroller;
+use App\Http\Controllers\RegisterConteroller;
+
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
@@ -25,4 +27,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 Route::get('/',[PostsConteroller::class, 'index'])->name('home');
 
 Route::get('/posts/{post:slug}', [PostsConteroller::class, 'showposts']);
+
+Route::get('register', [RegisterConteroller::class, 'create']);
+Route::post('register', [RegisterConteroller::class, 'store']);
 
