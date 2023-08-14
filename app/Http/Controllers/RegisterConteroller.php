@@ -23,6 +23,6 @@ class RegisterConteroller extends Controller{
     //   $attibutes['password'] = bcrypt($attibutes['password']);
 
       User::create($attibutes);
-      return redirect('/')->with('success', '!تم انشاء الحساب بنجاح');
+      return redirect('/');->with('success', '!تم انشاء الحساب بنجاح');
     }
 }
