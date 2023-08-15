@@ -38,9 +38,6 @@ class PostsConteroller extends Controller
 
    public function create(){
 
-    // if(auth()->guest){
-    //     abort(403);
-    // }
 
     if(auth()->user()?->username !== 'maryam1422'){
         abort(403);
@@ -60,7 +57,7 @@ class PostsConteroller extends Controller
       ]);
 
       $attibutes['user_id'] = auth()->id();
-      $attibutes['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
+      $attibutes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 
 
       Post::create($attibutes);

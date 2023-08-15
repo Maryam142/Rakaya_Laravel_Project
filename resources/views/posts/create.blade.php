@@ -12,20 +12,19 @@
                 <x-form.input name="title" />
                 {{-- slug --}}
                 <x-form.input name="slug" />
-
                 {{-- Excerpt --}}
-                <x-form.textarea name="Excerpt"/>
-
+                <x-form.textarea name="excerpt"/>
                 {{-- Body --}}
-                <x-form.textarea name="Body"/>
+                <x-form.textarea name="body"/>
 
                 {{-- thumbnail --}}
                 <x-form.input name="thumbnail" type="file" />
 
                 {{-- Category --}}
                 <div class="mb-6">
-                    <label for="category" class="block mb-2 font-bold text-xs text-gray-600">نوع المنتج</label>
-                    <select id="category" name="category" required class="border border-gray-300 p-2 w-full rounded-xl">
+                    <label for="category_id" 
+                    class="block mb-2 font-bold text-xs text-gray-600">نوع المنتج</label>
+                    <select id="category_id" name="category_id" required class="border border-gray-300 p-2 w-full rounded-xl">
                         @php
                         $categories = \App\Models\Category::all();
                         @endphp
@@ -36,7 +35,7 @@
                         @endforeach
                     </select>
 
-                    @error('Category')
+                    @error('category_id')
                     <p class="text-red-300 text-xs mt-1">{{$message}}</p>
                     @enderror
                 </div>

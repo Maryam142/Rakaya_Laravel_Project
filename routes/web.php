@@ -38,5 +38,5 @@ Route::post('login', [SessionConteroller::class, 'store'])-> middleware('guest')
 
 Route::post('logout', [SessionConteroller::class, 'destroy'])-> middleware('auth'); 
 
-Route::get('admin/posts/create', [PostsConteroller::class, 'create'])-> middleware('admin'); 
-Route::post('admin/posts', [PostsConteroller::class, 'store'])-> middleware('admin'); 
+Route::get('/admin/posts/create', [PostsConteroller::class, 'create'])-> middleware('admin'); 
+Route::post('/admin/posts', [PostsConteroller::class, 'store'])-> middleware('admin'); 

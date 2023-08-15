@@ -2,7 +2,7 @@
 
 <div class="mb-6">
     <label for="{{ $name }}" 
-    class="block mb-2 font-bold text-xs text-gray-600">العنوان</label>
+    class="block mb-2 font-bold text-xs text-gray-600">{{ $name }}</label>
     <input type="{{$type}}"
      id="{{ $name }}" 
     name="{{ $name }}" value="{{old($name)}}" 

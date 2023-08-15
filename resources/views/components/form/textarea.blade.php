@@ -6,7 +6,7 @@
     <textarea 
     id="{{ $name }}" 
     name="{{ $name }}" 
-    value="{{old($name )}}" 
+    value="{{old($name)}}" 
     required 
     class="mb-3 border border-gray-300 p-2 w-full rounded-xl"></textarea>
 
