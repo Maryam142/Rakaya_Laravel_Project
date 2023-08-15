@@ -1,4 +1,5 @@
 @props(['post'])
+
 <article class="transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
     <div class="py-6 px-5 lg:flex text-right">
         <div class="flex-1 flex flex-col justify-between p-3">
@@ -26,14 +27,17 @@
                     <!-- منظم جسارة - 1445 النموذج الثاني -->
 
                     <!-- المنتج عبارة عن منتج رقمي
-                            الرجاء كتابة الايميل الصحيح عند التسجيل للشراء -->
+                    الرجاء كتابة الايميل الصحيح عند التسجيل للشراء -->
                 </p>
             </div>
 
             <footer class="flex justify-between items-center mt-8">
                 <div class="hidden lg:block  me-2">
-                    <a href="/posts/{$post->slug}" class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8">
+                    <a href="/posts/{$post->slug}" class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-5">
                         للمزيـد
+                    </a>
+                    <a href="/posts/{$post->slug}" class=" mx-3 transition-colors duration-300 text-xs font-semibold bg-purple-200 hover:bg-purple-300 rounded-full py-2 px-4">
+                     I شراء  
                     </a>
                 </div>
 
@@ -63,7 +67,7 @@
             </footer>
         </div>
         <div class="flex-1 lg:mr-8">
-            <img src="/images/illustration-1.png" alt="Blog Post illustration" class="rounded-xl">
+            <img src="{{ asset('storage/'.$post->thumbnail) }}" alt="Blog Post illustration" class="rounded-xl">
         </div>
     </div>
 </article>

@@ -1,6 +1,6 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
     <h1 class="text-4xl">
-        .. <span class="text-pink-500">واااو </span>تصمم
+        .. <span class="text-pink-300">واااو </span>تصمم
 
     </h1>
 

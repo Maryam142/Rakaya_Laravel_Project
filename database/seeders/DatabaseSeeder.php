@@ -31,7 +31,9 @@ class DatabaseSeeder extends Seeder
         Category::factory()->create([
             'name'=> 'stikcers'
         ]);
-                Post::factory(10)->create();
+        
+        Post::factory(20)->create();
+
 
 
     }

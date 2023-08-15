@@ -30,8 +30,13 @@ Route::get('/',[PostsConteroller::class, 'index'])->name('home');
 
 Route::get('/posts/{post:slug}', [PostsConteroller::class, 'showposts']);
 
-Route::get('register', [RegisterConteroller::class, 'create'])-> middleware('guest');
+Route::get('register', [RegisterConteroller::class,  'create'])-> middleware('guest');
 Route::post('register', [RegisterConteroller::class, 'store'])-> middleware('guest'); 
 
-Route::post('logout', [SessionConteroller::class, 'destroy']); 
+Route::get('login', [SessionConteroller::class,  'create'])-> middleware('guest');
+Route::post('login', [SessionConteroller::class, 'store'])-> middleware('guest');
 
+Route::post('logout', [SessionConteroller::class, 'destroy'])-> middleware('auth'); 
+
+Route::get('admin/posts/create', [PostsConteroller::class, 'create'])-> middleware('admin'); 
+Route::post('admin/posts', [PostsConteroller::class, 'store'])-> middleware('admin'); 
