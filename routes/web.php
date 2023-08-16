@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostsConteroller;
 use App\Http\Controllers\RegisterConteroller;
 use App\Http\Controllers\SessionConteroller;
+use App\Http\Controllers\AdminPostsConteroller;
 
 
 use App\Models\Post;
@@ -38,5 +39,13 @@ Route::post('login', [SessionConteroller::class, 'store'])-> middleware('guest')
 
 Route::post('logout', [SessionConteroller::class, 'destroy'])-> middleware('auth'); 
 
-Route::get('/admin/posts/create', [PostsConteroller::class, 'create'])-> middleware('admin'); 
-Route::post('/admin/posts', [PostsConteroller::class, 'store'])-> middleware('admin'); 
+//Admin
+Route::post('/admin/posts/create', [AdminPostsConteroller::class, 'store'])-> middleware('admin'); 
+Route::get('/admin/posts/create', [AdminPostsConteroller::class, 'create'])-> middleware('admin'); 
+
+// Route::post('/admin/posts', [AdminPostsConteroller::class, 'store'])-> middleware('admin'); 
+Route::get('/admin/posts', [AdminPostsConteroller::class, 'index'])-> middleware('admin'); 
+Route::get('/admin/posts/{post}/edit', [AdminPostsConteroller::class, 'edit'])-> middleware('admin'); 
+
+
+Route::patch('/admin/posts/{post}', [AdminPostsConteroller::class, 'update'])-> middleware('admin'); 

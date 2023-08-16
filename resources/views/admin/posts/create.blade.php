@@ -1,24 +1,23 @@
 <x-layout>
     <section class="px-6 py-8">
-
-        <main class="max-w-lg mx-auto mt-10 p-6 rounded-xl px-5">
-            <h1 class="font-bold text-lg mx-auto text-purple-300">نشر منتج جديد</h1>
+      <x-setting heading="إدارة المنتجات">
+        <main class="max-w-lg mx-auto mt-10 p-6 border rounded-xl px-5">
 
             <form method="POST" action="/admin/posts" class="mt-6 " enctype="multipart/form-data">
 
                 @csrf
 
                 {{-- title --}}
-                <x-form.input name="title" />
+                <x-form.input name="title" content="العنوان"/>
                 {{-- slug --}}
-                <x-form.input name="slug" />
+                <x-form.input name="slug" content="slug"/>
                 {{-- Excerpt --}}
-                <x-form.textarea name="excerpt"/>
+                <x-form.textarea name="excerpt" content="وصف مختصر للمنتج"/>
                 {{-- Body --}}
-                <x-form.textarea name="body"/>
+                <x-form.textarea name="body"content="وصف المنتج"/>
 
                 {{-- thumbnail --}}
-                <x-form.input name="thumbnail" type="file" />
+                <x-form.input name="thumbnail" type="file" content="صورة المنتج"/>
 
                 {{-- Category --}}
                 <div class="mb-6">
@@ -48,5 +47,6 @@
                 </div>
             </form>
         </main>
-    </section>
+    </x-setting>
+  </section>
 </x-layout>

@@ -30,39 +30,10 @@ class PostsConteroller extends Controller
    }
 
 
-   public function showposts(Post  $post  ){
+public function showposts(Post  $post  ){
     return view('posts.showposts', [
         'post' => $post
     ]);
-   }
+}
 
-   public function create(){
-
-
-    if(auth()->user()?->username !== 'maryam1422'){
-        abort(403);
-    }
-    return view('posts.create');
-   }
-
-   public function store(){
-
-    $attibutes = request()-> validate([
-        'title' => 'required',
-        'thumbnail' => 'required|image',
-        'slug' => ['required', Rule::unique('posts', 'slug')],
-        'excerpt' => 'required',
-        'body' => 'required',
-        'category_id' => ['required', Rule::exists('categories', 'id')]
-      ]);
-
-      $attibutes['user_id'] = auth()->id();
-      $attibutes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-
-
-      Post::create($attibutes);
-
-      return redirect('/');
-
-   }
 }
