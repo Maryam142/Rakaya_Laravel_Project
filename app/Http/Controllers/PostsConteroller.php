@@ -15,18 +15,15 @@ use Illuminate\Http\Request;
 class PostsConteroller extends Controller
 {
     public function index(){
-   
+
+//    $this->authorize('admin');
    return view('posts.index', [
     // 'currentCategory' => Category::firstWhere('slug',request('category')),
     'posts' => Post::latest()->filter(
       request(['search', 'category', 'author'])
     )->paginate(6)->withQueryString()
    ]);
-   
-    // return view('posts.index', [
-    //     'posts' =>Post::latest()->filter(request(['search', 'category', 'author']))->paginate(6),
-    //     'currentCategory' => Category::firstWhere('slug',request('category'))
-    // ]);
+    
    }
 
 

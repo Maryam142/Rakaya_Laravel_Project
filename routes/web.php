@@ -40,12 +40,16 @@ Route::post('login', [SessionConteroller::class, 'store'])-> middleware('guest')
 Route::post('logout', [SessionConteroller::class, 'destroy'])-> middleware('auth'); 
 
 //Admin
-Route::post('/admin/posts/create', [AdminPostsConteroller::class, 'store'])-> middleware('admin'); 
-Route::get('/admin/posts/create', [AdminPostsConteroller::class, 'create'])-> middleware('admin'); 
+Route::middleware('can:admin')->group(function () {
+Route::resource('/admin/posts', AdminPostsConteroller::class);
+//
+ // Route::post('/admin/posts/create', [AdminPostsConteroller::class, 'store']); 
+ // Route::get('/admin/posts/create', [AdminPostsConteroller::class, 'create']); 
 
-// Route::post('/admin/posts', [AdminPostsConteroller::class, 'store'])-> middleware('admin'); 
-Route::get('/admin/posts', [AdminPostsConteroller::class, 'index'])-> middleware('admin'); 
-Route::get('/admin/posts/{post}/edit', [AdminPostsConteroller::class, 'edit'])-> middleware('admin'); 
+ // Route::get('/admin/posts', [AdminPostsConteroller::class, 'index']); 
+ // Route::get('/admin/posts/{post}/edit', [AdminPostsConteroller::class, 'edit']); 
 
-Route::patch('/admin/posts/{post}', [AdminPostsConteroller::class, 'update'])-> middleware('admin'); 
-Route::delete('/admin/posts/{post}', [AdminPostsConteroller::class, 'destroy'])-> middleware('admin'); 
+ // Route::patch('/admin/posts/{post}', [AdminPostsConteroller::class, 'update']); 
+ // Route::delete('/admin/posts/{post}', [AdminPostsConteroller::class, 'destroy']); 
+
+});

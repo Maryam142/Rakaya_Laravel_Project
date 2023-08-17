@@ -24,47 +24,43 @@
             </div>
 
             <div class="mt-8 mx-9 md:mt-0 flex items-center">
-
-            <!-- @admin
-            
-            @endadmin -->
-
                 @auth
                 <x-dropdown>
                     <x-slot name="trigger">
-                    <button class="text-md font-bold "> {{ auth()->user()->name }}  أهلًا و سهلًا </button>
+                        <button class="text-md font-bold"> {{ auth()->user()->name }} أهلًا و سهلًا </button>
+                        <x-down-arrow class="relative flex-inline pointer-events-none mt-1"></x-down-arrow>
                     </x-slot>
-
+                    @admin
                     <x-dropdown-item href="/admin/posts/create">لوحة التحكم </x-dropdown-item>
                     <x-dropdown-item href="/admin/posts/create">منتج جديد </x-dropdown-item>
- 
-                    <x-dropdown-item
-                        href="#"
-                        x-data="{}"
-                        @click.prevent="document.querySelector('#logout-form').submit()"
-                    > تسجيل الخروج
+                    @endadmin
 
-                </x-dropdown-item>
+                    <x-dropdown-item href="/admin/posts/create">مشترياتي  </x-dropdown-item>
+                    <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">
+                         تسجيل الخروج
+                    </x-dropdown-item>
 
                     <form id="logout-form" method="POST" action="/logout" class="hidden">
                         @csrf
                     </form>
                 </x-dropdown>
 
-               <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
-                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
-                class="w-6 h-6  text-blue-400 mx-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                </svg></a>
+
+
+                <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  text-blue-400 mx-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg></a>
+
+
                 @endauth
 
                 @guest
                 <a href="/register" class="text-xs font-bold uppercase"> تسجيل جديد </a>
                 <a href="/login" class="ml-5 text-xs font-bold uppercase"> تسجيل الدخول </a>
                 <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-5 w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-5 w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
                 </a>
 
                 @endguest

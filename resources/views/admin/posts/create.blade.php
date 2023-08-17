@@ -14,7 +14,7 @@
                 {{-- Excerpt --}}
                 <x-form.textarea name="excerpt" content="وصف مختصر للمنتج"/>
                 {{-- Body --}}
-                <x-form.textarea name="body"content="وصف المنتج"/>
+                <x-form.textarea name="body" content="وصف المنتج"/>
 
                 {{-- thumbnail --}}
                 <x-form.input name="thumbnail" type="file" content="صورة المنتج"/>
@@ -42,7 +42,7 @@
                 {{-- submit --}}
                 <div class="mb-6 mt-2  flex justify-center">
                     <button type="submit" required class="text-center bg-purple-200 border border-purple-200 text-black hover:bg-purple-300   hover:text-white p-2 rounded-xl w-full mt-4">
-                        تم
+                        اضافة
                     </button>
                 </div>
             </form>

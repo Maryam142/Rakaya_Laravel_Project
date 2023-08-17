@@ -37,7 +37,9 @@ protected function validatePost(?Post $post = null): array{
 }
 
 public function store(){
+    
     Post::create(array_merge($this->validatePost(), [
+        
         'user_id' => request()->user()->id,
         'thumbnail' => request()->file('thumbnail')->store('thumbnails')
     ]));
