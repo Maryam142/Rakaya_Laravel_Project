@@ -9,8 +9,7 @@
 
     <input type="{{$type}}"
      id="{{ $name }}" 
-    name="{{ $name }}" value="{{$slot ?? old(name)}}" 
-    required 
+    name="{{ $name }}" value="{{$slot ?? old(name)}}"  
     class="mb-3 border border-gray-400 p-2 w-full rounded"
     {{$attributes}}
     >

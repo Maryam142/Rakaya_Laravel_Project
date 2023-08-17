@@ -6,10 +6,10 @@
         <aside class="w-64 rounded-xl p-6  ">
             <h4 class="font-bold mb-4">لوحة التحكم </h4>
             <ul>
-             <li> <a href="/admin/posts/create" class="{{ request()->is('admin/posts/createPost') ? 'text-pink-900': '' }} ">اضافة منتج</a>  </li>
-             <li> <a href="#" class="{{ request()->is('admin/posts/createPost') ? 'text-pink-900': '' }}">اضافة قسم</a>  </li>
-             <li> <a href="#" class="{{ request()->is('admin/posts/createPost') ? 'text-pink-900': '' }} text-gray">المبيعات</a>  </li>
-             <li> <a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-pink-900': '' }} text-gray">كل المنتجات</a>  </li>
+             <li> <a href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-pink-500': '' }} ">اضافة منتج</a>  </li>
+             <li> <a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-pink-500': '' }}">كل المنتجات</a>  </li>
+             <li> <a href="#" class="{{ request()->is('admin/posts/createPost') ? 'text-purple-500': '' }}  text-gray-400">اضافة قسم</a>  </li>
+             <li> <a href="#" class="{{ request()->is('admin/posts/createPost') ? 'text-purple-500': '' }} text-gray-400">المبيعات</a>  </li>
             </ul>
 
         </aside>

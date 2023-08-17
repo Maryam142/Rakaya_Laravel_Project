@@ -1,9 +1,9 @@
 <x-layout>
     <section class="px-6 py-8">
-        <main class="max-w-lg mx-auto mt-10 border border-gray-300 bg-gray-100 p-6 rounded-xl ">
+    <main class="max-w-lg mx-auto mt-10 p-6 border rounded-xl px-5">
 
-            <h1 class="text-center font-bold text-xl  text-pink-300"> !أهلًا ومرحبـــا </h1>
-            <h6 class="text-center text-xl mt-2">سجل حساب جديد</h6>
+            <h1 class="text-center font-bold text-xl  text-pink-400"> !أهلًا ومرحبـــا </h1>
+            <h6 class="text-center text-xl mt-2 text-indigo-400">سجل حساب جديد</h6>
 
 
             <form method="POST" action="/register" class="mt-10">

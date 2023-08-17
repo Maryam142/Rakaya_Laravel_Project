@@ -1,11 +1,11 @@
 <x-layout>
-    <x-setting :heading="': تعديل المنتج ' . $post->title">
+    <x-setting :heading="'تعديل المنتج '.$post->title ">
     <main class="max-w-lg mx-auto mt-10 p-6 border rounded-xl px-5">
         <form method="POST" action="/admin/posts/{{ $post->id }}" class="mt-6 " enctype="multipart/form-data">
 
             @csrf
             @method('PATCH')
-            
+
             {{-- title --}}
             <x-form.input name="title" content="العنوان" >{{old('title', $post->title)}}  </x-form.input>
             {{-- slug --}}
@@ -41,7 +41,9 @@
 
             {{-- submit --}}
             <div class="mb-6 mt-2  flex justify-center">
-                <button type="submit" required class="text-center bg-purple-200 border border-purple-200 text-black hover:bg-purple-300   hover:text-white p-2 rounded-xl w-full mt-4">
+                <button type="submit" 
+                onclick="return confirm('هل انت متأكد من تعديل المنتج؟')" 
+                class="text-center bg-purple-200 border border-purple-200 text-black hover:bg-purple-300   hover:text-white p-2 rounded-xl w-full mt-4">
                     تعديل
                 </button>
             </div>

@@ -29,7 +29,7 @@ protected function validatePost(?Post $post = null): array{
     return request()->validate([
         'title' => 'required',
         'thumbnail' => $post->exists ? ['image'] : ['required', 'image'],
-        'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post)],
+        'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post->id)],
         'excerpt' => 'required',
         'body' => 'required',
         'category_id' => ['required', Rule::exists('categories', 'id')]
@@ -49,10 +49,6 @@ public function index(){
     return view('admin.posts.index', [
         'posts'=> Post::paginate(50)
      ]); 
-}
-
-
-public function delete(){
 }
 
 public function edit(Post $post){
@@ -75,7 +71,7 @@ public function update(Post $post){
 public function destroy(Post $post){
     $post->delete();
 
-    return back()->with('success', '!تم حث المنتج');
+    return back()->with('success', '!تم حذف المنتج');
 }
 
 }

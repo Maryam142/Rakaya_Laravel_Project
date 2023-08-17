@@ -25,6 +25,10 @@
 
             <div class="mt-8 mx-9 md:mt-0 flex items-center">
 
+            <!-- @admin
+            
+            @endadmin -->
+
                 @auth
                 <x-dropdown>
                     <x-slot name="trigger">

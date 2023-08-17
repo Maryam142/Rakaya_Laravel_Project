@@ -2,9 +2,10 @@
 
     <x-slot name="trigger">
         <button class="py-2 pl-3 pr-9d text-sm inline-flex font-semibold text-right flex lg:inline-flex w-32 text-center">
-            {{ isset($currentCategory)? ucwords($currentCategory->name) : 'الاقسام'}}
+            {{ isset($currentCategory) ? ucwords($currentCategory->name) : 'الاقسام' }}
+
         </button>
-        <x-down-arrow class="" absolute pointer-events-none></x-down-arrow>
+        <x-down-arrow class=" absolute pointer-events-none mt-1"></x-down-arrow>
 
     </x-slot>
 

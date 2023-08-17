@@ -28,7 +28,9 @@
                                         <form method="POST" action="/admin/posts/{{ $post->id }}">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="text-xs text-red-400">حذف</button>
+                                            <button onclick="return confirm('هل انت متأكد من حذف المنتج؟')" class="text-xs text-red-400"
+                                            >حذف
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>

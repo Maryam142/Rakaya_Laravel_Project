@@ -47,5 +47,5 @@ Route::get('/admin/posts/create', [AdminPostsConteroller::class, 'create'])-> mi
 Route::get('/admin/posts', [AdminPostsConteroller::class, 'index'])-> middleware('admin'); 
 Route::get('/admin/posts/{post}/edit', [AdminPostsConteroller::class, 'edit'])-> middleware('admin'); 
 
-
 Route::patch('/admin/posts/{post}', [AdminPostsConteroller::class, 'update'])-> middleware('admin'); 
+Route::delete('/admin/posts/{post}', [AdminPostsConteroller::class, 'destroy'])-> middleware('admin'); 
