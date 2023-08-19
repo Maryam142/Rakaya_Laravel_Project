@@ -34,6 +34,11 @@
                             </g>
                         </svg>
                     </div>
+
+                    <button
+                    class="text-center bg-purple-200 border border-purple-200 text-black hover:bg-purple-300 hover:text-white p-2 rounded-xl w-full mt-4"
+                    > اضف للسلة</button>
+
                 </div>
 
                 <div class="col-span-8">
@@ -65,10 +70,10 @@
                     </div>
 
                     <!-- Comments -->
-                    <section>
-                        <article>
-                            <div></div>
-                        </article>
+                    <section class="col-span-8 col-start-5 mt-20 space-y-5">
+                        <x-post-comment/>
+                        <x-post-comment/>
+                        <x-post-comment/>
 
                     </section>
 

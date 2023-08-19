@@ -43,7 +43,7 @@
             <div class="mb-6 mt-2  flex justify-center">
                 <button type="submit" 
                 onclick="return confirm('هل انت متأكد من تعديل المنتج؟')" 
-                class="text-center bg-purple-200 border border-purple-200 text-black hover:bg-purple-300   hover:text-white p-2 rounded-xl w-full mt-4">
+                class="text-center bg-purple-200 border border-purple-200 text-black hover:bg-purple-300 hover:text-white p-2 rounded-xl w-full mt-4">
                     تعديل
                 </button>
             </div>
