@@ -10,7 +10,6 @@ class Post extends Model
     use HasFactory;
 
     protected $with = ['category', 'author'];
-    protected $guarded = [];
 
     public function scopeFilter($query, array $filters){
 
@@ -38,9 +37,15 @@ class Post extends Model
 
     public function category(){ 
         //make an elquent relationship
-        return $this -> belongsTo(Category::class);
+     return $this -> belongsTo(Category::class);  
+    }
+
+    public function comments(){ 
+        //make an elquent relationship
+        return $this -> hasMany(Comment::class);
   
     }
+
     public function author(){ 
         //make an elquent relationship
         return $this -> belongsTo(User::class,'user_id');
