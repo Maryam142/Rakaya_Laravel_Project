@@ -31,13 +31,14 @@
 
             <footer class="flex justify-between items-center mt-8">
                 <div>
-                    <a href="/posts/{$post->slug}" class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-5">
+                  <i><a href="/posts/{$post->slug}" class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-5">
                         للمزيـد
-                    </a>
+                    </a></i> 
 
-                    <a href="/posts/{$post->slug}" class=" mx-3 transition-colors duration-300 text-xs font-semibold bg-purple-200 hover:bg-purple-300 rounded-full py-2 px-4">
+                    
+                    <i><a href="/posts/{$post->slug}" class=" mx-3 transition-colors duration-300 text-xs font-semibold bg-purple-200 hover:bg-purple-300 rounded-full py-2 px-4">
                       I شراء  
-                    </a>
+                    </a></i> 
                 </div>
                 <div class="flex items-center text-sm">
                     <div class="ml-3">

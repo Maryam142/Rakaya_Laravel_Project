@@ -3,7 +3,7 @@
     <div class="flex-grow text-right">
         <header class="mb-4">
             <h3 class="font-bold text-right">{{$comment->user->username}}</h3>
-            <p> نشرت
+            <p> نشرت منذ
                 <time>        
                     {{$comment->created_at}}    
                 </time>

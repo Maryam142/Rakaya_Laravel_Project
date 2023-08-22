@@ -1,6 +1,6 @@
 @if(session()->has('success'))
     <div x-data ="{show:  true}"
-    x-init="setTimeout(() => show = false, 400)"
+    x-init="setTimeout(() => show = false, 1200)"
     x-show="show"
 
 

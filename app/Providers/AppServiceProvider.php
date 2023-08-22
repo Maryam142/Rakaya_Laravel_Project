@@ -7,7 +7,10 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Gate;
 use App\Models\User;
+use App\Services\Newsletter;
 use Illuminate\Support\Facades\Blade;
+use MailchimpMarketing\ApiClient;
+
 
 
 class AppServiceProvider extends ServiceProvider
@@ -17,9 +20,19 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
-    {
-        //
+    public function register(){
+
+        $client = (new ApiClient);
+
+       app()->bind(Newsletter::class, function(){
+       
+        $client = (new ApiClient)->setConfig([
+            'apiKey' => config('services.mailchimp.key'),
+            'server' => 'us21'
+        ]);
+     });
+     return new Newsletter($client);
+
     }
 
     /**
@@ -27,8 +40,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
+    public function boot(){
         Model::unguard();
 
         Gate::define('admin', function (User $user) {
