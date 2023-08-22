@@ -64,6 +64,8 @@ Route::get('/', [PostsConteroller::class, 'index'])->name('home');
 Route::get('/posts/{post:slug}', [PostsConteroller::class, 'showposts']);
 Route::post('posts/{post:slug}/comments', [PostCommentsConteroller::class, 'store']);
 
+Route::post('/addcart/{post:id}', [PostsConteroller::class, 'addcart']);
+
 
 Route::get('register', [RegisterConteroller::class,  'create'])->middleware('guest');
 Route::post('register', [RegisterConteroller::class, 'store'])->middleware('guest');

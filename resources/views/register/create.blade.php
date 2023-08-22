@@ -2,7 +2,7 @@
     <section class="px-6 py-8">
     <main class="max-w-lg mx-auto mt-10 p-6 border rounded-xl px-5">
 
-            <h1 class="text-center font-bold text-xl  text-pink-400"> !أهلًا ومرحبـــا </h1>
+            <h1 class="text-center font-bold text-xl  text-pink-300"> !أهلًا ومرحبـــا </h1>
             <h6 class="text-center text-xl mt-2 text-indigo-400">سجل حساب جديد</h6>
 
 
@@ -57,12 +57,14 @@
 
                 </div>
 
+                <div class="my-3">
+                    هل لديك حساب بالفعل؟ <span class="text-pink-300"> <a href="/login"> سجل الدخول </a></span>
+                </div>
 
 
                 {{-- submit --}}
-
                 <div class="mb-6  flex justify-center">
-                    <button type="submit" required class="text-center border border-gray-400 text-black hover:bg-gray-700  hover:text-white bg-blue-100 p-2 rounded-xl w-full ">
+                <button type="submit" required class="text-center text-black hover:bg-purple-300  hover:text-white bg-purple-200 p-2 rounded-xl w-full">
                         ارسال
                     </button>
 

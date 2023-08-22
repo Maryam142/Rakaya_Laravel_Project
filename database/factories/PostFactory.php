@@ -26,7 +26,7 @@ class PostFactory extends Factory{
             'category_id' => Category::factory(),
             'title' => $this->faker->sentence(),
             'slug' =>$this->faker->slug(),
-            'price'=>$this->faker->numberBetween(100, 1000),
+            'price'=>$this->faker->numberBetween(1, 100),
             'excerpt' => $this->faker->sentence(2),
             'body' =>$this->faker->paragraph(6)        
         ];

@@ -32,14 +32,14 @@
 
             <footer class="flex justify-between items-center mt-8">
                 <div>
-                  <i><a href="/posts/{$post->slug}" class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-5">
+                  <!-- <i><a href="/posts/{$post->slug}" class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-5">
                         للمزيـد
-                    </a></i> 
+                    </a></i>  -->
 
-                    
-                    <i><a href="/posts/{$post->slug}" class=" mx-3 transition-colors duration-300 text-xs font-semibold bg-purple-200 hover:bg-purple-300 rounded-full py-2 px-4">
-                      I شراء  
-                    </a></i> 
+                    <form method="POST" action="/addcart/{{$post->id}}"> 
+                    @csrf
+                    <input type="submit" class="btn mx-3 text-xs font-semibold bg-purple-200 hover:bg-purple-300 rounded py-3 px-4 d-inline" value="اضف للسلة">
+                    </form>
                 </div>
 
                 <div class="flex items-center text-sm">
