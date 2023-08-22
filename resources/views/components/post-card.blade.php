@@ -26,6 +26,7 @@
             </header>
 
             <div class="text-sm mt-4">
+                <h3 class="font-bold">ريال {{ $post->price }} السعر</h3>
                 <p> {!! $post-> excerpt !!} </p>
             </div>
 
@@ -40,6 +41,7 @@
                       I شراء  
                     </a></i> 
                 </div>
+
                 <div class="flex items-center text-sm">
                     <div class="ml-3">
                         <h5 class="font-bold">:تم هذا العمل بالتعاون مع</h5>
@@ -49,6 +51,7 @@
                             </a>
                         </h6>
                     </div>
+                
                     <!-- <img src="/images/lary-avatar.svg" alt="Lary avatar"> -->
                     <svg viewBox="0 0 1024 1024" class="icon h-7" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

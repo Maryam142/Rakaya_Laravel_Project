@@ -22,13 +22,8 @@
             </header>
 
             <div class="text-sm mt-2">
-                <p>
-                    {!! $post-> excerpt !!}
-                    <!-- منظم جسارة - 1445 النموذج الثاني -->
-
-                    <!-- المنتج عبارة عن منتج رقمي
-                    الرجاء كتابة الايميل الصحيح عند التسجيل للشراء -->
-                </p>
+                <h3 class="font-bold">السعر {{ $post->price }} ريال</h3>
+                <p> {!! $post-> excerpt !!}</p>
             </div>
 
             <footer class="flex justify-between items-center mt-8">
@@ -44,7 +39,7 @@
 
                 <div class="flex items-center text-sm">
                     <div class="ml-3 p-3">
-                        <h5 class="font-bold ">:تم هذا العمل بالتعاون مع</h5>
+                        <h5 class="font-bold">:تم هذا العمل بالتعاون مع</h5>
                         <h6>
                             <a href="/?author={{ $post->author->username }}">
                                 {{ $post->author->name }}

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->text('excerpt');
             $table->text('body');
-            $table->string('price')->nullable();
+            $table->integer('price')->nullable();
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
 

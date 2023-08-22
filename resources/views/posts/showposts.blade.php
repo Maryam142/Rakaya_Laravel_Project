@@ -10,7 +10,6 @@
                     <p class="mt-4 block text-gray-400 text-xs">
                         نشر قبل <time>{!! $post-> created_at ->diffForHumans() !!}</time>
                     </p>
-
                     <div class="flex items-center lg:justify-center text-sm mt-4">
                         <!-- <img src="/images/lary-avatar.svg" alt="Lary avatar"> -->
                         <div class="ml-3 text-left">
@@ -34,6 +33,8 @@
                             </g>
                         </svg>
                     </div>
+
+                    <h2 class="font-bold my-3 text-center">السعر {{ $post->price }} ريال</h2>
 
                     <button class="text-center bg-purple-200 border border-purple-200 text-black hover:bg-purple-300 hover:text-white p-2 rounded-xl w-full mt-4"> اضف للسلة</button>
 
